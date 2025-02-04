@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Submission - Smart Home Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="ticket-container">
+        <div class="logo">
+            <img src="logo.png" alt="Company Logo" class="logo-img">
+            <h1>Smart Home Solutions - Ticket Portal</h1>
+        </div>
+
+        <!-- Ticket Submission Form -->
+        <div class="form-box">
+            <h2>Submit a New Ticket</h2>
+            <form id="ticket-form">
+                <input type="text" id="title" placeholder="Ticket Title" required>
+                <textarea id="description" placeholder="Describe your issue..." required></textarea>
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </div>
+
+        <!-- Ticket Dashboard -->
+        <div class="dashboard-box">
+            <h2>Your Tickets</h2>
+            <table id="ticket-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tickets will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

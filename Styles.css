@@ -1,0 +1,155 @@
+/* Background Styling */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') no-repeat center center/cover;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* Centered Containers */
+.login-container, .ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 30px;
+}
+
+/* Box Styling for Login and Tickets */
+.login-box, .form-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+}
+
+.dashboard-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Input Fields Styling */
+#login-form input, #ticket-form input, #ticket-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#ticket-form input, #ticket-form textarea {
+    width: 80%;              /* Adjusted width for better display */
+    margin: 10px auto;       /* Center the input fields horizontally */
+    display: block;          /* Ensures inputs behave like block elements for centering */
+}
+
+#ticket-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Button Styling */
+#login-form button, #ticket-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#login-form button:hover, #ticket-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Ticket Dashboard Styling */
+.dashboard-box {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+#ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#ticket-table th, #ticket-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+#ticket-table th {
+    background-color: #007BFF;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 15px;
+}
+
+#ticket-table td {
+    padding: 15px;
+}
+
+#ticket-table tr:hover {
+    background-color: #e9f5ff;
+    transition: background-color 0.3s ease;
+}
+
+#ticket-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#ticket-table button {
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#ticket-table button:hover {
+    background-color: #218838;
+}

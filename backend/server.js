@@ -1,34 +1,29 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const fs = require('fs');
+const express = require("express");
+const cors = require("cors");
+
 const app = express();
-const PORT = 3000;
+app.use(express.json());
+app.use(cors());
 
-app.use(bodyParser.json());
-app.use(express.static(__dirname + '/../'));  // Serve static files like index.html
+console.log("✅ Express server is starting...");
 
-// Load users from users.txt
-const loadUsers = () => {
-    const usersData = fs.readFileSync(__dirname + '/users.txt', 'utf8');
-    return usersData.split('\n').map(line => {
-        const [username, password] = line.trim().split(':');
-        return { username, password };
-    });
-};
-
-// Login Route
-app.post('/backend/login', (req, res) => {
-    const { username, password } = req.body;
-    const users = loadUsers();
-    const user = users.find(u => u.username === username && u.password === password);
-    if (user) {
-        res.json({ success: true });
-    } else {
-        res.json({ success: false });
-    }
+// Middleware to Log Every Request
+app.use((req, res, next) => {
+    console.log(`🔵 Received request: ${req.method} ${req.url}`);
+    next();
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
+// ✅ Add a simple test route
+app.get("/", (req, res) => {
+    console.log("✅ GET / route hit!");
+    res.send("Hello, Express is working!");
 });
+
+// Import routes
+const loginRoute = require("./routes/login");
+app.use("/api/login", loginRoute);
+
+const PORT = 4000;
+const HOST = "0.0.0.0"; // ✅ Bind to all interfaces
+
+app.listen(PORT, HOST, () => console.log(`✅ Server running on http://${HOST}:${PORT}`));
